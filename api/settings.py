@@ -138,6 +138,12 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SITE_ID = 1
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+}
+
 # JWT Auth setup
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'auth'
